@@ -19,7 +19,7 @@ const routes: Routes = [
   declarations: [AppComponent, HomeComponent],
   imports: [
     [RouterModule.forRoot(routes)],
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyBUTaI6ng8uKtVw__ElM0BLS-EAuIIKI4Y'}),
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyCPQpQYFtvmIoRfkNSlYm_Wri-O30Y1fkY'}),
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
