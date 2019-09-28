@@ -2,7 +2,7 @@ import {AgmCoreModule} from '@agm/core';
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatButtonModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatFormField, MatFormFieldModule, MatSelectModule, MatToolbarModule} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
@@ -26,6 +26,8 @@ const routes: Routes = [
     FlexLayoutModule,
     MatToolbarModule,
     MatButtonModule,
+    MatSelectModule,
+    MatFormFieldModule,
     HttpClientModule,
   ],
   providers: [],

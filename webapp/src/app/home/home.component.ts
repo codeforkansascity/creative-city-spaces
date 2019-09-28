@@ -10,11 +10,16 @@ import {DataPointsService} from '../data-points.service';
 })
 export class HomeComponent implements OnInit {
   points: [any];
+  interestTypes: [any];
 
   constructor(private dp: DataPointsService) {}
 
   ngOnInit() {
-    this.dp.getDataPoints('Fountains').subscribe(d => {
+    this.dp.getDistinctTypes().subscribe(d => this.interestTypes = d);
+  }
+
+  refreshPoints(ev) {
+    this.dp.getDataPoints(ev.value).subscribe(d => {
       this.points = d.map(i => {
         let p: any = i;
         let z = p.coordinates.split(' ');

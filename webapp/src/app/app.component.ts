@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {DataPointsService} from './data-points.service';
 
 @Component({
   selector: 'app-root',
