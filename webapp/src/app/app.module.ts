@@ -1,4 +1,4 @@
-import {AgmCoreModule} from '@agm/core';
+import {AgmCoreModule, InfoWindowManager} from '@agm/core';
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -10,6 +10,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
+import {InfowindowComponent} from './infowindow/infowindow.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, InfowindowComponent],
   imports: [
     [RouterModule.forRoot(routes)],
     AgmCoreModule.forRoot({apiKey: 'AIzaSyCPQpQYFtvmIoRfkNSlYm_Wri-O30Y1fkY'}),

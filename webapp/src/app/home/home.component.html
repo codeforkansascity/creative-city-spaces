@@ -1,9 +1,18 @@
 <div fxLayout='column'>
+    <div fxLayout='row' fxLayoutAlign='center'>
+        <mat-form-field>
+            <mat-label>Select Your Interest</mat-label>
+            <mat-select (selectionChange)='refreshPoints($event)'>
+                <mat-option *ngFor='let t of interestTypes' [value]='t.type'>{{t.type}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
     <div class='map' fxFlex='1 1 100%' #map>
         <agm-map [latitude]='39.084573' [longitude]='-94.585204'>
             <agm-marker *ngFor='let p of points' [latitude]='p.lat' [longitude]='p.lng'>
-               <agm-info-window><app-infowindow></app-infowindow></agm-info-window>
+                <agm-info-window>
+                    <app-infowindow></app-infowindow>
+                </agm-info-window>
             </agm-marker>
         </agm-map>
     </div>
-</div>
