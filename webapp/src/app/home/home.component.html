@@ -11,7 +11,7 @@
         <agm-map [latitude]='39.084573' [longitude]='-94.585204'>
             <agm-marker *ngFor='let p of points' [latitude]='p.lat' [longitude]='p.lng'>
                 <agm-info-window>
-                    <app-infowindow></app-infowindow>
+                    <app-infowindow [data]='p'></app-infowindow>
                 </agm-info-window>
             </agm-marker>
         </agm-map>
