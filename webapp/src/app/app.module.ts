@@ -2,7 +2,7 @@ import {AgmCoreModule, InfoWindowManager} from '@agm/core';
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatButtonModule, MatFormField, MatFormFieldModule, MatSelectModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatButtonToggleModule, MatFormField, MatFormFieldModule, MatIconModule, MatSelectModule, MatToolbarModule} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
@@ -29,6 +29,8 @@ const routes: Routes = [
     MatButtonModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatButtonToggleModule,
+    MatIconModule,
     HttpClientModule,
   ],
   providers: [],

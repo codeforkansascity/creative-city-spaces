@@ -16,4 +16,10 @@ export class DataPointsService {
     return this.client.get<any>(
         ' https://data.kcmo.org/resource/6x5f-7sf4.json?$select=distinct type');
   }
+
+  getFilteredOnTypes(types: string[]): Observable<any> {
+    return this.client.get<any>(
+        `https://data.kcmo.org/resource/6x5f-7sf4.json?$where=type in (${
+            types.map(z => `'${z}'`)})`);
+  }
 }

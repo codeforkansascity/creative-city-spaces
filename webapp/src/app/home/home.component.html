@@ -1,11 +1,11 @@
-<div fxLayout='column'>
-    <div fxLayout='row' fxLayoutAlign='center'>
-        <mat-form-field>
-            <mat-label>Select Your Interest</mat-label>
-            <mat-select (selectionChange)='refreshPoints($event)'>
-                <mat-option *ngFor='let t of interestTypes' [value]='t.type'>{{t.type}}</mat-option>
-            </mat-select>
-        </mat-form-field>
+<div fxLayout='row'>
+    <div fxLayout='column' fxLayoutAlign='center'>
+        <div *ngFor='let t of interestTypes'>
+            <mat-button-toggle (change)='toggleFilter(t.type, $event.source.checked)'>
+                <mat-icon color='accent'>favorite</mat-icon>
+                <span>{{t.type}}</span>
+            </mat-button-toggle>
+        </div>
     </div>
     <div class='map' fxFlex='1 1 100%' #map>
         <agm-map [latitude]='39.084573' [longitude]='-94.585204'>
@@ -16,3 +16,4 @@
             </agm-marker>
         </agm-map>
     </div>
+</div>

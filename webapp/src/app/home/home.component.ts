@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {empty, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 import {DataPointsService} from '../data-points.service';
@@ -11,6 +12,8 @@ import {DataPointsService} from '../data-points.service';
 export class HomeComponent implements OnInit {
   points: [any];
   interestTypes: [any];
+  filters: string[] = [];
+
 
   constructor(private dp: DataPointsService) {}
 
@@ -20,13 +23,32 @@ export class HomeComponent implements OnInit {
 
   refreshPoints(ev) {
     this.dp.getDataPoints(ev.value).subscribe(d => {
-      this.points = d.map(i => {
-        let p: any = i;
-        let z = p.coordinates.split(' ');
-        p.lat = z[0];
-        p.lng = z[1];
-        return p;
-      });
+      this.points = d.map(this.addLatLng);
     });
+  }
+
+  toggleFilter(type: string, checked: boolean) {
+    if (!checked) {
+      const idx = this.filters.indexOf(type);
+      if (idx > -1) {
+        this.filters.splice(idx, 1);
+      }
+    } else {
+      this.filters.push(type);
+    }
+    if (this.filters.length < 1) {
+      this.points = undefined;
+    } else {
+      this.dp.getFilteredOnTypes(this.filters).subscribe(d => {
+        this.points = d.map(this.addLatLng);
+      });
+    }
+  }
+
+  private addLatLng(p): any {
+    let z = p.coordinates.split(' ');
+    p.lat = z[0];
+    p.lng = z[1];
+    return p;
   }
 }
