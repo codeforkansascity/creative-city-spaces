@@ -1,4 +1,14 @@
 <div>
-    <p>Cultural Asset</p>
-    <div>{{ data | json}}</div>
-</div>
+<div id="iw-container">
+    <div class="iw-title">{{ data.name }}</div> 
+    <div class="iw-content"> 
+      <div class="iw-subTitle">{{ data.type }}</div> 
+      <img src="./stock-fountain-image.jpg" alt="Stock Image" height="115" width="83">
+      <p>{{ data.description }}</p>
+      <div class="iw-subTitle">Contacts</div> 
+      <p>{{ data.address }}<br>
+      <br>Phone #<br>e-mail: </p>
+    </div> 
+    <div class="iw-bottom-gradient"></div> 
+  </div> 
+  </div>
