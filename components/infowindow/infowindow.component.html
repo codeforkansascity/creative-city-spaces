@@ -1,13 +1,14 @@
 <div>
 <div id="iw-container">
-    <div class="iw-title">{{ data.name }}</div> 
+    <div class="iw-title">{{ data.name }}
+    </div> 
     <div class="iw-content"> 
-      <div class="iw-subTitle">{{ data.type }}</div> 
+     <!-- <div class="iw-subTitle"></div>--> 
       <img src="./stock-fountain-image.jpg" alt="Stock Image" height="115" width="83">
       <p>{{ data.description }}</p>
       <div class="iw-subTitle">Contacts</div> 
       <p>{{ data.address }}<br>
-      <br>Phone #<br>e-mail: </p>
+      <br>Learn more at {{data.contact_information}}</p>
     </div> 
     <div class="iw-bottom-gradient"></div> 
   </div> 
