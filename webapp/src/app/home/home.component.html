@@ -1,19 +1,4 @@
 <div fxLayout='row'>
-    <div fxLayout='column' fxLayoutAlign='center'>
-        <div *ngFor='let t of interestTypes'>
-            <mat-button-toggle (change)='toggleFilter(t.type, $event.source.checked)'>
-                <mat-icon color='accent'>favorite</mat-icon>
-                <span>{{t.type}}</span>
-            </mat-button-toggle>
-        </div>
-    </div>
-    <div class='map' fxFlex='1 1 100%' #map>
-        <agm-map [latitude]='39.084573' [longitude]='-94.585204'>
-            <agm-marker *ngFor='let p of points' [latitude]='p.lat' [longitude]='p.lng'>
-                <agm-info-window>
-                    <app-infowindow [data]='p'></app-infowindow>
-                </agm-info-window>
-            </agm-marker>
-        </agm-map>
-    </div>
+    <app-filter-container></app-filter-container>
+    <app-map-container fxFlex='1 1 100%'></app-map-container>
 </div>

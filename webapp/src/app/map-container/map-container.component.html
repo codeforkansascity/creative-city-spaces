@@ -1,0 +1,6 @@
+<div class='map' fxFlex='1 1 100%' #map>
+    <agm-map [latitude]='39.084573' [longitude]='-94.585204'>
+        <agm-marker *ngFor='let p of points' [latitude]='p.lat' [longitude]='p.lng'>
+        </agm-marker>
+    </agm-map>
+</div>
