@@ -1,6 +1,8 @@
-<div class='map' fxFlex='1 1 100%' #map>
+<div class='map' fxFlex='1 1 100%' #map fxLayout='column'>
     <agm-map [latitude]='39.084573' [longitude]='-94.585204'>
-        <agm-marker *ngFor='let p of points' [latitude]='p.lat' [longitude]='p.lng'>
+        <agm-marker *ngFor='let p of points' [latitude]='p.lat' [longitude]='p.lng' (markerClick)='select(p)'>
         </agm-marker>
     </agm-map>
 </div>
+
+<app-point-details [data]='selected' *ngIf='showDetails()' [@slideInOut] (clear)='clearSelection()'></app-point-details>

@@ -1,0 +1,9 @@
+<div fxFlex='400px'>
+    <div fxLayout='row'>
+        <button mat-button (click)='clearDetails()'>
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+        <h3>Details</h3>
+    </div>
+    {{ data | json}}
+</div>

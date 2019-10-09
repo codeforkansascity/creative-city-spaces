@@ -2,7 +2,7 @@ import {AgmCoreModule, InfoWindowManager} from '@agm/core';
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatButtonModule, MatButtonToggleModule, MatExpansionModule, MatFormField, MatFormFieldModule, MatIconModule, MatSelectModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatButtonToggleModule, MatExpansionModule, MatFormField, MatFormFieldModule, MatIconModule, MatSelectModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
@@ -12,8 +12,10 @@ import {AppComponent} from './app.component';
 import {FilterContainerComponent} from './filter-container/filter-container.component';
 import {HomeComponent} from './home/home.component';
 import {InfowindowComponent} from './infowindow/infowindow.component';
+import {MapContainerComponent} from './map-container/map-container.component';
 import {PlaceFilterComponent} from './place-filter/place-filter.component';
-import { MapContainerComponent } from './map-container/map-container.component';
+import {PointDetailsComponent} from './point-details/point-details.component';
+import {ProgramFilterComponent} from './program-filter/program-filter.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -23,8 +25,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent, HomeComponent, InfowindowComponent, PlaceFilterComponent,
-    FilterContainerComponent,
-    MapContainerComponent
+    FilterContainerComponent, MapContainerComponent, ProgramFilterComponent,
+    PointDetailsComponent
   ],
   imports: [
     [RouterModule.forRoot(routes)],
@@ -35,6 +37,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatButtonModule,
     MatSelectModule,
+    MatIconModule,
+    MatSidenavModule,
     MatFormFieldModule,
     MatButtonToggleModule,
     MatIconModule,
