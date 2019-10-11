@@ -8,4 +8,5 @@ import {DataPointsService} from './data-points.service';
 })
 export class AppComponent {
   title = 'ccs';
+  title = 'app';
 }
