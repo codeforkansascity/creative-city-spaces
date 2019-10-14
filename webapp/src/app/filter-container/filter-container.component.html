@@ -1,11 +1,17 @@
-<div id="wrapper">
-  <div>
-    <a href="" class="toggle">
-        <img src="../../../assets/menu-buttons/do.png" alt="Do!" class="do-go" id="do"/>
-    </a>
-    <a href="" class="toggle">
-        <img src="../../../assets/menu-buttons/go.png" alt="Go!" class="do-go" id="go"/>
-    </a>
-  </div>
-    <h3>Creative City Spaces</h3>
+<div>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Places</mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-place-filter></app-place-filter>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Programs</mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-program-filter></app-program-filter>
+        </mat-expansion-panel>
+    </mat-accordion>
 </div>
