@@ -1,2 +1,11 @@
-<app-navigation></app-navigation>
-<app-filter-container></app-filter-container>
+<div fxLayout='column' fxLayoutAlign='stretch' id="toolbar">
+  <mat-toolbar fxLayout='row' fxLayoutAlign='stretch'>
+    <span>
+      <p>Creative City Spaces</p>
+    </span>
+  </mat-toolbar>
+
+  <div fxLayout='column' fxLayoutAlign='stretch' id="map-filter">
+    <router-outlet></router-outlet>
+  </div>
+</div>
