@@ -1,10 +1,18 @@
-<div fxFlex='400px'>
-    <div fxLayout='row'>
-        <button mat-button (click)='clearDetails()'>
-            <mat-icon>chevron_right</mat-icon>
-        </button>
-        <h3>Details</h3>
-    </div>
-    <div class="data">{{ data | json}}</div>
-</div>
-
+<div fxFlex='1 1 55%'>
+  <div fxLayout='row'>
+      <button mat-button (click)='clearDetails()'>
+          <mat-icon>chevron_right</mat-icon>
+      </button>
+      <div>
+        <div>
+            <div>{{ data.name }}</div>
+            <div>
+                <div>{{ data.type }}</div>
+                <img src="./stock-fountain-image.jpg" alt="Stock Image" height="115" width="83">
+                <p>{{ data.description }}</p>
+                <div>Contacts</div>
+                <p>{{ data.address }}<br>
+                    <br>Phone #<br><a href="{{data.contact_information.url}}">{{ data.contact_information.url}}</a> </p>
+                  <!--<p>{{ data | json }}</p>-->
+            </div>
+        </div>
