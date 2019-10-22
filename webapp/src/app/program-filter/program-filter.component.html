@@ -1,6 +1,10 @@
-<form>
-    Date<br>
-    <input type="date" placeholder="Choose a date" name="eventdate"><br><br>
+<div>
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br><br>
     Type<br>
         <select>
             <option value="type1+type2+type3">All</option>
@@ -22,4 +26,4 @@
             <option value="eventcouncildistrict3">Event Council District3</option>
         </select><br><br>
     <input type="submit"value="Submit">
-    </form>
+    </div>
