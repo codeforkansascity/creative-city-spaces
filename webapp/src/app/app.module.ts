@@ -14,6 +14,7 @@ import {FilterContainerComponent} from './filter-container/filter-container.comp
 import {HomeComponent} from './home/home.component';
 import {InfowindowComponent} from './infowindow/infowindow.component';
 import {MapContainerComponent} from './map-container/map-container.component';
+import {NavigationComponent} from './navigation/navigation.component';
 import {PlaceFilterComponent} from './place-filter/place-filter.component';
 import {PointDetailsComponent} from './point-details/point-details.component';
 import {ProgramFilterComponent} from './program-filter/program-filter.component';
