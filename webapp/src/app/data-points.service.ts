@@ -40,4 +40,9 @@ export class DataPointsService {
     return this.client.get<any>(
         'https://data.kcmo.org/resource/6x5f-7sf4.json?$select=distinct type');
   }
+
+  getDistinctProgramTypes(): Observable<any> {
+    return this.client.get<any>(
+        'https://data.kcmo.org/resource/4j37-ebgz.json?$select=distinct%20type');
+  }
 }
