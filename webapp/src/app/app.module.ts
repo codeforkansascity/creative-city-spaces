@@ -2,12 +2,13 @@ import {AgmCoreModule, InfoWindowManager} from '@agm/core';
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {MatButtonModule, MatButtonToggleModule, MatExpansionModule, MatFormField, MatFormFieldModule, MatIconModule, MatSelectModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatButtonModule, MatButtonToggleModule, MatDatepickerModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
 
-import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {FilterContainerComponent} from './filter-container/filter-container.component';
 import {HomeComponent} from './home/home.component';
@@ -25,15 +26,9 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    InfowindowComponent,
-    PlaceFilterComponent,
-    FilterContainerComponent,
-    MapContainerComponent,
-    ProgramFilterComponent,
-    PointDetailsComponent,
-    NavigationComponent,
+    AppComponent, HomeComponent, InfowindowComponent, PlaceFilterComponent,
+    FilterContainerComponent, MapContainerComponent, ProgramFilterComponent,
+    PointDetailsComponent, NavigationComponent
   ],
   imports: [
     [RouterModule.forRoot(routes)],
@@ -41,6 +36,9 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatSelectModule,
@@ -49,6 +47,9 @@ const routes: Routes = [
     MatFormFieldModule,
     MatButtonToggleModule,
     MatIconModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatInputModule,
     MatExpansionModule,
     HttpClientModule,
   ],
