@@ -1,16 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {AgmCoreModule} from '@agm/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MapContainerComponent } from './map-container.component';
+import {MaterialImportsModule} from '../material-imports.module';
+
+import {MapContainerComponent} from './map-container.component';
 
 describe('MapContainerComponent', () => {
   let component: MapContainerComponent;
   let fixture: ComponentFixture<MapContainerComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ MapContainerComponent ]
-    })
-    .compileComponents();
+    TestBed
+        .configureTestingModule({
+          declarations: [MapContainerComponent],
+          imports: [
+            MaterialImportsModule,
+            AgmCoreModule,
+          ]
+        })
+        .compileComponents();
   }));
 
   beforeEach(() => {

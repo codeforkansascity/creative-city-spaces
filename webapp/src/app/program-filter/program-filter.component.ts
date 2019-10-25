@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {DataPointsService} from '../data-points.service';
 
 @Component({
   selector: 'app-program-filter',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./program-filter.component.scss']
 })
 export class ProgramFilterComponent implements OnInit {
+  types = [
+    {'type': 'Annual'}, {'type': 'One-Time Event'}, {'type': 'Series Of Events'}
+  ];
 
-  constructor() { }
+  data: any[];
 
-  ngOnInit() {
+  constructor(private dps: DataPointsService) {}
+
+  ngOnInit() {}
+
+  setType(t: string) {
+    this.dps.getPrograms(`'${t}'`);
   }
-
 }

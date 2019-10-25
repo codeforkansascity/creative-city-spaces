@@ -1,16 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ProgramFilterComponent } from './program-filter.component';
+import {MaterialImportsModule} from '../material-imports.module';
+
+import {ProgramFilterComponent} from './program-filter.component';
 
 describe('ProgramFilterComponent', () => {
   let component: ProgramFilterComponent;
   let fixture: ComponentFixture<ProgramFilterComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ProgramFilterComponent ]
-    })
-    .compileComponents();
+    TestBed
+        .configureTestingModule({
+          declarations: [ProgramFilterComponent],
+          imports: [
+            MaterialImportsModule,
+            HttpClientTestingModule,
+          ],
+        })
+        .compileComponents();
   }));
 
   beforeEach(() => {

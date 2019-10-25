@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./point-details.component.scss']
 })
 export class PointDetailsComponent implements OnInit {
-  @Input() data: any;
+  @Input() data: any = {name: ''};
   @Output() clear = new EventEmitter();
 
   constructor() {}
