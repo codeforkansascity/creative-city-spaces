@@ -1,16 +1,22 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PlaceFilterComponent } from './place-filter.component';
+import {MaterialImportsModule} from '../material-imports.module';
+
+import {PlaceFilterComponent} from './place-filter.component';
 
 describe('PlaceFilterComponent', () => {
   let component: PlaceFilterComponent;
   let fixture: ComponentFixture<PlaceFilterComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ PlaceFilterComponent ]
-    })
-    .compileComponents();
+    TestBed
+        .configureTestingModule({
+          declarations: [PlaceFilterComponent],
+          imports: [
+            MaterialImportsModule,
+          ]
+        })
+        .compileComponents();
   }));
 
   beforeEach(() => {

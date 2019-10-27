@@ -1,16 +1,22 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { InfowindowComponent } from './infowindow.component';
+import {MaterialImportsModule} from '../material-imports.module';
+
+import {InfowindowComponent} from './infowindow.component';
 
 describe('InfowindowComponent', () => {
   let component: InfowindowComponent;
   let fixture: ComponentFixture<InfowindowComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ InfowindowComponent ]
-    })
-    .compileComponents();
+    TestBed
+        .configureTestingModule({
+          declarations: [InfowindowComponent],
+          imports: [
+            MaterialImportsModule,
+          ]
+        })
+        .compileComponents();
   }));
 
   beforeEach(() => {

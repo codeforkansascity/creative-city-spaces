@@ -31,6 +31,11 @@ export class MapContainerComponent implements OnInit {
         .subscribe(p => {
           this.points = p;
         });
+
+    this.dp.programs.pipe(filter(p => p !== undefined || p !== null))
+        .subscribe(p => {
+          this.points = p;
+        })
   }
 
   select(p) {
