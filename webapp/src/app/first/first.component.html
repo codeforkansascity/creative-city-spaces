@@ -1,3 +1,11 @@
-<!--<p>
-    first works!
-  </p>-->
+<button (click)="toggle()" id="bt">
+    Places
+</button>
+
+<ng-container *ngIf="show">
+   <div style="margin: 0 auto;text-align: left;">
+       <div>
+          <app-place-filter></app-place-filter>
+       </div>
+   </div>
+</ng-container>

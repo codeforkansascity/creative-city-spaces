@@ -1,6 +1,15 @@
-<div class="mat-app-background" fxLayout='row'>
+<mat-toolbar class="toolbar" fxLayout="row" fxLayoutAlign="stretch">
+  <span>
+    <p>Creative City Spaces</p>
+  </span>
+</mat-toolbar>
 
-  <app-filter-container class="filter" fxFlex='1 1 25%'></app-filter-container>
-  <app-map-container class="map" fxFlex='1 1 100%'></app-map-container>
-
+<div class="body" fxLayout="row" fxLayoutAlign="stretch">
+  <div class="flex-container" fxLayout="column" fxFlex="10%" [ngSwitch]="componentToDisplay">
+      <button (click)="setComponent(1)"><app-first></app-first></button>
+      <button (click)="setComponent(2)"><app-second></app-second></button>
+    </div>
+    <mat-card class='child-2' fxFlex="97%">
+      <app-map-container></app-map-container>
+    </mat-card>
 </div>

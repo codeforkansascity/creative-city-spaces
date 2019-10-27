@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-second',
-  templateUrl: './second.component.html',
-  styleUrls: ['./second.component.scss']
+  selector: 'app-navigation-container',
+  templateUrl: './navigation-container.component.html',
+  styleUrls: ['./navigation-container.component.css']
 })
-export class SecondComponent implements OnInit {
+export class NavigationContainerComponent implements OnInit {
 
   public show = false;
   public buttonName: any = 'Show';
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {   }
 
   toggle() {
     this.show = !this.show;
@@ -24,6 +23,6 @@ export class SecondComponent implements OnInit {
     } else {
       this.buttonName = 'Show';
     }
-  }
 
+}
 }
