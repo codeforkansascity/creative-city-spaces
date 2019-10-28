@@ -1,5 +1,5 @@
-div {
-  margin-top: -0.75em;
+.point-details {
+  margin-top: -1 em;
   margin-left: 1em;
 }
 
@@ -11,4 +11,13 @@ h3, .data {
 button
  {
    background-color: #58585a;
+ }
+
+ mat-icon {
+   color: white;
+ }
+
+ a, a:active, a:visited {
+   text-decoration: none;
+   color: #ffffbf;
  }
