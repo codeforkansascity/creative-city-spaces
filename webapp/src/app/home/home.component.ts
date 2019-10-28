@@ -8,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class HomeComponent implements OnInit {
 
   public isOn = false;
-  public componentToDisplay: int = 1;
+  componentToDisplay: number;
 
   getButtonText(): string {
     return `Switch ${ this.isOn ? 'Off' : 'On' }`;

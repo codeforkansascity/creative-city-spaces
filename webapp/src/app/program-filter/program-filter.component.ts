@@ -9,7 +9,7 @@ import {DataPointsService} from '../data-points.service';
 })
 export class ProgramFilterComponent implements OnInit {
   types = [
-    {'type': 'Annual'}, {'type': 'One-Time Event'}, {'type': 'Series Of Events'}
+    {type: 'Annual'}, {type: 'One-Time Event'}, {type: 'Series Of Events'}
   ];
 
   data: any[];

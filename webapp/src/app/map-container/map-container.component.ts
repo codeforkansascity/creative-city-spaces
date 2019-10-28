@@ -1,9 +1,7 @@
 import {animate, style, transition, trigger} from '@angular/animations';
 import {Component, OnInit} from '@angular/core';
 import {filter} from 'rxjs/operators';
-
 import {DataPointsService} from '../data-points.service';
-
 
 @Component({
   selector: 'app-map-container',
@@ -35,7 +33,7 @@ export class MapContainerComponent implements OnInit {
     this.dp.programs.pipe(filter(p => p !== undefined || p !== null))
         .subscribe(p => {
           this.points = p;
-        })
+        });
   }
 
   select(p) {
