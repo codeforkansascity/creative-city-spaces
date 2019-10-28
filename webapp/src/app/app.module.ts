@@ -17,9 +17,11 @@ import {NavigationComponent} from './navigation/navigation.component';
 import {PlaceFilterComponent} from './place-filter/place-filter.component';
 import {PointDetailsComponent} from './point-details/point-details.component';
 import {ProgramFilterComponent} from './program-filter/program-filter.component';
+import {ShowProgramsTestComponent} from './show-programs-test/show-programs-test.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'sp', component: ShowProgramsTestComponent},
   {path: '**', redirectTo: ''},
 ];
 
@@ -27,7 +29,7 @@ const routes: Routes = [
   declarations: [
     AppComponent, HomeComponent, InfowindowComponent, PlaceFilterComponent,
     FilterContainerComponent, MapContainerComponent, ProgramFilterComponent,
-    PointDetailsComponent, NavigationComponent
+    PointDetailsComponent, NavigationComponent, ShowProgramsTestComponent
   ],
   imports: [
     [RouterModule.forRoot(routes)],

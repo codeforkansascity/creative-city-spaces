@@ -1,0 +1,29 @@
+<div [formGroup]='form' fxLayout='column'>
+    <div class='mat-subheading-1'>Types</div>
+    <mat-checkbox *ngFor='let t of form.controls.types.controls; let i = index' [value]='typesData[i].type'
+        [formControl]='t'>{{ typesData[i].type }}
+    </mat-checkbox>
+    <div>
+        <button mat-raised-button [disabled]='!canApply()' color='primary' (click)='apply()'>Apply</button>
+    </div>
+    <hr />
+
+    <div class='mat-subheading-1'>Primary Function</div>
+    <mat-checkbox *ngFor='let p of form.controls.priFunc.controls; let i = index'
+        [value]='primaryFunctions[i].primary_function' [formControl]='p'>{{ primaryFunctions[i].primary_function }}
+    </mat-checkbox>
+    <div>
+        <button mat-raised-button [disabled]='!canApply()' color='primary' (click)='apply()'>Apply</button>
+    </div>
+
+    <hr />
+
+    <div class='mat-subheading-1'>Districts</div>
+    <mat-checkbox *ngFor='let d of form.controls.districts.controls; let i = index' [formControl]='d'>
+        {{ councilDistricts[i].event_council_district }}</mat-checkbox>
+</div>
+
+
+<div>
+    <button mat-raised-button [disabled]='!canApply()' color='primary' (click)='apply()'>Apply</button>
+</div>
