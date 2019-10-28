@@ -1,49 +1,11 @@
-<mat-toolbar color="warn">
-    <mat-toolbar-row>
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="primary">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span><img src="./assets/devglan.png"></span>
-    </mat-toolbar-row>
-  </mat-toolbar>
+<button (click)="toggle()" id="bt">
+  Places
+</button>
 
-  <mat-sidenav-container class="example-container" >
-    <mat-sidenav #drawer mode="side" opened role="navigation">
-      <!-- <mat-nav-list>
-        <a mat-list-item routerLink='/first'>Places</a>
-        <a mat-list-item routerLink='/second'>Programs</a>
-      </mat-nav-list> -->
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-
-  <mat-drawer-container class="example-container">
-    <mat-drawer #drawer mode="side" opened role="navigation">
-        <mat-accordion>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>Places</mat-panel-title>
-                </mat-expansion-panel-header>
-                <app-place-filter></app-place-filter>
-            </mat-expansion-panel>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>Programs</mat-panel-title>
-                </mat-expansion-panel-header>
-                <app-program-filter></app-program-filter>
-            </mat-expansion-panel>
-        </mat-accordion>
-    </mat-drawer>
-    <mat-drawer-content>
-      <router-outlet></router-outlet>
-    </mat-drawer-content>
-  </mat-drawer-container>
-
- <mat-drawer-container class="example-container">
-    <mat-drawer-content>
-      <router-outlet></router-outlet>
-    </mat-drawer-content>
-  </mat-drawer-container>
-
+<ng-container *ngIf="show">
+ <div style="margin: 0 auto;text-align: left;">
+     <div>
+        <app-place-filter></app-place-filter>
+     </div>
+ </div>
+</ng-container>

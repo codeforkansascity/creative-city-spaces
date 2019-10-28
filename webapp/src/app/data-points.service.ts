@@ -35,7 +35,7 @@ export class DataPointsService {
   }
 
   private addLatLng(p): any {
-    let z = p.coordinates.split(' ');
+    const z = p.coordinates.split(' ');
     p.lat = z[0];
     p.lng = z[1];
     return p;
@@ -44,7 +44,7 @@ export class DataPointsService {
     if (!p.activity_coordinates) {
       return p;
     }
-    let z = p.activity_coordinates.split(' ') || [0, 0];
+    const z = p.activity_coordinates.split(' ') || [0, 0];
     p.lat = z[0];
     p.lng = z[1];
     return p;
@@ -66,6 +66,7 @@ export class DataPointsService {
         });
   }
 
+  // tslint:disable-next-line: max-line-length
   // https://data.kcmo.org/resource/4j37-ebgz.json?$where=type=%27Annual%27%20and%20event_project_start_date%20%3E%20%272019-04-19T00:00:00.000%27
 
   // distinct program types

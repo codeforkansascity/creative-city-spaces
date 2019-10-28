@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  selector: 'app-navigation2',
+  templateUrl: './navigation2.component.html',
+  styleUrls: ['./navigation2.component.scss']
 })
-export class NavigationComponent implements OnInit {
+export class Navigation2Component implements OnInit {
 
   public show = false;
   public buttonName: any = 'Show';

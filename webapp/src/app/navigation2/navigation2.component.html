@@ -1,0 +1,11 @@
+<button (click)="toggle()" id="bt">
+  Programs
+</button>
+
+<ng-container *ngIf="show" class="program-filter">
+ <div style="margin: 0 auto;text-align: left;">
+    <div>
+      <app-program-filter></app-program-filter>
+    </div>
+ </div>
+</ng-container>

@@ -1,4 +1,4 @@
-<div fxFlex='1 1 55%'>
+<div fxFlex='1 1 55%' class="point-details">
   <div fxLayout='row'>
       <button mat-button (click)='clearDetails()'>
           <mat-icon>chevron_right</mat-icon>
@@ -12,7 +12,7 @@
                 <p>{{ data.description }}</p>
                 <div>Contacts</div>
                 <p>{{ data.address }}<br>
-                    <br>Phone #<br><a href="{{data.contact_information.url}}">{{ data.contact_information.url}}</a> </p>
+                    <br>Phone #<br><a href="{{data.contact_information.url}}" target=”_blank”>{{ data.contact_information.url}}</a> </p>
                   <!--<p>{{ data | json }}</p>-->
             </div>
         </div>

@@ -8,7 +8,7 @@ import {DataPointsService} from '../data-points.service';
 })
 export class PlaceFilterComponent implements OnInit {
   interestTypes: [any];
-  filters: string[] = []
+  filters: string[] = [];
 
   constructor(private dp: DataPointsService) {}
 
