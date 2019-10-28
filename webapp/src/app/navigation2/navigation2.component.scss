@@ -1,3 +1,15 @@
+.programs {
+  background-color: #58585a;
+}
+
+button {
+  color: white;
+  background-color: #58585a;
+  border: none;
+}
+
+button:focus {outline:0;}
+
 .program-filter
 {
   height: auto;
