@@ -14,7 +14,7 @@ export class AppComponent {
               private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       `programs`,
-      this.domSanitizer.bypassSecurityTrustResourceUrl(`./app/src/assets/menu-buttons/programs.svg`)
+      this.domSanitizer.bypassSecurityTrustResourceUrl(`././assets/menu-buttons/programs.png`)
     );
 }
 }

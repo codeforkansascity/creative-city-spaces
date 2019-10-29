@@ -1,8 +1,8 @@
 <div fxLayout='column' fxLayoutAlign='center'>
     <div *ngFor='let t of interestTypes'>
         <mat-button-toggle (change)='toggleFilter(t.type, $event.source.checked)'>
-            <mat-icon></mat-icon>
-            <span>{{t.type}}</span>
+            <mat-icon>{{t.type}}</mat-icon>
+              <span>{{t.type}}</span>
         </mat-button-toggle>
     </div>
 </div>
