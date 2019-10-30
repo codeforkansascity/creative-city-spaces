@@ -6,7 +6,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatButtonToggleModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import {AppComponent} from './app.component';
 import {FilterContainerComponent} from './filter-container/filter-container.component';
@@ -42,7 +42,8 @@ const routes: Routes = [
     HttpClientModule,
     MaterialImportsModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

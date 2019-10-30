@@ -6,8 +6,8 @@
 
 <div class="body" fxLayout="row" fxLayoutAlign="stretch">
   <div class="flex-container" fxLayout="column" fxFlex="15%" [ngSwitch]="componentToDisplay">
-      <button (click)="setComponent(1)"><app-navigation></app-navigation></button>
-      <button (click)="setComponent(2)"><app-navigation2></app-navigation2></button>
+      <mat-button-toggle (click)="setComponent(1)"><app-navigation></app-navigation></mat-button-toggle>
+      <mat-button-toggle (click)="setComponent(2)"><app-navigation2></app-navigation2></mat-button-toggle>
     </div>
     <mat-card class='child-2' fxFlex="97%">
       <app-map-container></app-map-container>
