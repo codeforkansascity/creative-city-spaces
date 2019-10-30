@@ -52,6 +52,10 @@ export class ShowProgramsTestComponent implements OnInit {
     });
   }
 
+  clear() {
+    this.form.reset();
+  }
+
   apply() {
     this.form.markAsPristine();
     let pf = this.form.value.priFunc
