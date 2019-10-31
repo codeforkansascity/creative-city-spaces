@@ -1,11 +1,9 @@
-<button (click)="toggle()" id="bt">
+<mat-button-toggle (click)="toggle()" id="bt">
   Places
-</button>
+</mat-button-toggle>
 
 <ng-container *ngIf="show">
- <div style="margin: 0 auto;text-align: left;">
-     <div>
-        <app-place-filter></app-place-filter>
-     </div>
- </div>
+    <div>
+       <app-place-filter></app-place-filter>
+    </div>
 </ng-container>
