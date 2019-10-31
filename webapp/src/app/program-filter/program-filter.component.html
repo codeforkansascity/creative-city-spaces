@@ -18,11 +18,12 @@
     Primary Function<br>
     <select>
         <option *ngFor="let p of primary_functions" [value]="p.pimary_function">{{p.primary_function}}</option>
- 
+
     </select><br><br>
     Event Council District<br>
     <select>
-        <option *ngFor="let e of event_council_districts" [value]="e.event_council_district">{{e.event_council_district}}</option>
+        <option *ngFor="let e of event_council_districts" [value]="e.event_council_district">
+            {{e.event_council_district}}</option>
     </select><br><br>
     <input type="submit" value="Submit">
 </div>
