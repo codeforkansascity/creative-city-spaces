@@ -1,15 +1,12 @@
-<mat-toolbar class="toolbar" fxLayout="row" fxLayoutAlign="stretch">
-  <span>
-    <p>Creative City Spaces</p>
-  </span>
+<div fxLayout="column">
+<mat-toolbar>
+  <img src="./././assets/culture_creative_services_logo.png">
+  Creative City Spaces
 </mat-toolbar>
 
-<div class="body" fxLayout="row" fxLayoutAlign="stretch">
-  <div class="flex-container" fxLayout="column" fxFlex="15%" [ngSwitch]="componentToDisplay">
-      <mat-button-toggle (click)="setComponent(1)"><app-navigation></app-navigation></mat-button-toggle>
-      <mat-button-toggle (click)="setComponent(2)"><app-navigation2></app-navigation2></mat-button-toggle>
-    </div>
-    <mat-card class='child-2' fxFlex="97%">
-      <app-map-container></app-map-container>
-    </mat-card>
+<div fxLayout="row" fxLayoutGap="0%">
+<app-navigation fxFlex="24%"></app-navigation>
+<app-map-container fxFlex="76%"></app-map-container>
+</div>
+
 </div>

@@ -4,9 +4,9 @@
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-    <br><br>
+    <br>
     <mat-form-field>
-        <mat-select (selectionChange)='setType($event.value)'>
+        <mat-select (selectionChange)='setType($event.value)' placeholder="Type of event">
             <mat-option *ngFor='let t of types' [value]='t.type'>{{ t.type }}</mat-option>
         </mat-select>
     </mat-form-field>
