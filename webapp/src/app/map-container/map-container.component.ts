@@ -38,6 +38,37 @@ export class MapContainerComponent implements OnInit {
         });
   }
 
+  mapIcons = {
+    'attractions': {
+      url: 'assets/map-pins/mp_orange.svg',
+      scaledSize: {width: 30, height: 30}
+    },
+    'fountains': {
+      url: 'assets/map-pins/mp_green.svg',
+      scaledSize: {width: 30, height: 30}
+    },
+    'museums': {
+      url: 'assets/map-pins/mp_pink.svg',
+      scaledSize: {width: 30, height: 30}
+    },
+    'public art': {
+      url: 'assets/map-pins/mp_yellow.svg',
+      scaledSize: {width: 30, height: 30}
+    },
+    'theater': {
+      url: 'assets/map-pins/mp_turquoise.svg',
+      scaledSize: {width: 30, height: 30}
+    },
+    'historical monuments and memorials': {
+      url: 'assets/map-pins/mp_purple.svg',
+      scaledSize: {width: 30, height: 30}
+    }
+  };
+
+  getIcon(p): string {
+    return this.mapIcons[p.type.toLowerCase()];
+  }
+
   select(p) {
     this.selected = p;
   }
