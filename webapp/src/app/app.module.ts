@@ -6,7 +6,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
-import { MatCardModule, MatButtonToggleModule } from '@angular/material';
+import { MatCardModule, MatButtonToggleModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import {MatListModule} from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import {AppComponent} from './app.component';
 import {FilterContainerComponent} from './filter-container/filter-container.component';
@@ -43,7 +44,15 @@ const routes: Routes = [
     MaterialImportsModule,
     MatCardModule,
     MatIconModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSidenavModule,
+    MatListModule
+  ],
+  exports: [
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

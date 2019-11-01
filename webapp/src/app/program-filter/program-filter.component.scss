@@ -1,1 +1,16 @@
+option, input, .placeholder, mat-label {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
 
+.styled-select select {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
+
+.submit {
+  font-size: 1.25em;
+  background-color: #5ac7cb;
+  border-color: #38aeb2;
+  padding: 0.25em;
+}

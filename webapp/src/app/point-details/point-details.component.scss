@@ -1,6 +1,24 @@
+point-details {
+  display: flex;
+  height: 95vh;
+}
+
 img {
   width: 10em;
   height: auto;
+}
+
+.text {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+}
+
+.text, .contacts, .address, .phone, .url {
+  font-size: 0.75rem;
+}
+
+.description {
+  width: 100%;
 }
 
  a, a:active, a:visited {

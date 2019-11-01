@@ -1,6 +1,7 @@
 <div class="program-filter">
     <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <input matInput [matDatepicker]="picker">
+        <mat-placeholder class="placeholder">Choose a Date</mat-placeholder>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -9,6 +10,7 @@
         <mat-select (selectionChange)='setType($event.value)' placeholder="Type of event">
             <mat-option *ngFor='let t of types' [value]='t.type'>{{ t.type }}</mat-option>
         </mat-select>
+        <mat-label>Type of Event</mat-label>
     </mat-form-field>
     <br>
     <!-- Type<br>
@@ -18,18 +20,23 @@
         <option value="type2">Type2</option>
         <option value="type3">Type3</option>
     </select><br><br> -->
-    <select>
-        <option value="primaryfunction1">Primary Function1</option>
-        <option value="primaryfunction2">Primary Function2</option>
-        <option value="primaryfunction3">Primary Function3</option>
-        <option value="primaryfunction4">Primary Function4</option>
-    </select>
+    <div class="styled-select">
+      <select>
+          <option value="primaryfunction1">Primary Function1</option>
+          <option value="primaryfunction2">Primary Function2</option>
+          <option value="primaryfunction3">Primary Function3</option>
+          <option value="primaryfunction4">Primary Function4</option>
+      </select>
+    </div>
     <br>
     <br>
-    <select>
-        <option value="eventcouncildistrict1">Event Council District1</option>
-        <option value="eventcouncildistrict2">Event Council District2</option>
-        <option value="eventcouncildistrict3">Event Council District3</option>
-    </select><br><br>
-    <input type="submit" value="Submit">
+    <div class="styled-select">
+      <select>
+          <option value="eventcouncildistrict1">Event Council District1</option>
+          <option value="eventcouncildistrict2">Event Council District2</option>
+          <option value="eventcouncildistrict3">Event Council District3</option>
+      </select>
+    </div>
+    <br><br>
+    <input type="submit" value="Submit" class="submit">
   </div>
