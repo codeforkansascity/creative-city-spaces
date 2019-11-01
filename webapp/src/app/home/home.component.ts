@@ -7,6 +7,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  currDiv = 'places';
+
+  ShowDiv(divVal: string) {
+    this.currDiv = divVal;
+  }
+
   constructor() {}
 
   ngOnInit() {}

@@ -1,12 +1,27 @@
-<div fxLayout="column">
-<mat-toolbar>
-  <img src="./././assets/culture_creative_services_logo.png">
-  Creative City Spaces
-</mat-toolbar>
+<div fxLayout="row">
+  <div fxFlex="3%" class="fxFlex">
+    <div fxLayout="column" class="column">
+      <mat-sidenav-container class="example-container" autosize>
+        <mat-sidenav #drawer class="example-sidenav" mode="side">
+          <app-navigation></app-navigation>
+        </mat-sidenav>
 
-<div fxLayout="row" fxLayoutGap="0%">
-<app-navigation fxFlex="24%"></app-navigation>
-<app-map-container fxFlex="76%"></app-map-container>
-</div>
+        <div class="example-sidenav-content">
+            <button type="button" class="filter-button" aria-label="Toggle filters" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+          </div>
 
+
+      <div class="title">
+        <p class="vertical-text">Creative City Spaces</p>
+      </div>
+      <div class="logo">
+        <img src="././assets/culture_creative_services_logo.png">
+      </div>
+      </mat-sidenav-container>
+    </div>
+  </div>
+
+  <app-map-container fxFlex="97%"></app-map-container>
 </div>

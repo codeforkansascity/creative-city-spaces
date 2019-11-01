@@ -27,4 +27,5 @@ export class ProgramFilterComponent implements OnInit {
   setType(t: string) {
     this.dps.getPrograms(`'${t}'`);
   }
+
 }

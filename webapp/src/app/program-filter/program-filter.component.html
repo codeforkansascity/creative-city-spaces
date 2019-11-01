@@ -1,6 +1,7 @@
 <div class="program-filter">
     <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <input matInput [matDatepicker]="picker">
+        <mat-placeholder class="placeholder">Choose a Date</mat-placeholder>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -9,21 +10,8 @@
         <mat-select (selectionChange)='setType($event.value)' placeholder="Type of event">
             <mat-option *ngFor='let t of types' [value]='t.type'>{{ t.type }}</mat-option>
         </mat-select>
+        <mat-label>Type of Event</mat-label>
     </mat-form-field>
     <br>
     <select>
         <option value="type1+type2+type3">All</option>
-        <option *ngFor="let t of types" [value]="t.type">{{t.type}}</option>
-    </select><br><br>
-    Primary Function<br>
-    <select>
-        <option *ngFor="let p of primary_functions" [value]="p.pimary_function">{{p.primary_function}}</option>
-
-    </select><br><br>
-    Event Council District<br>
-    <select>
-        <option *ngFor="let e of event_council_districts" [value]="e.event_council_district">
-            {{e.event_council_district}}</option>
-    </select><br><br>
-    <input type="submit" value="Submit">
-</div>
