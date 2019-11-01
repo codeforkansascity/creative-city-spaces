@@ -1,9 +1,10 @@
-<mat-button-toggle (click)="toggle()" id="bt">
-  Places
-</mat-button-toggle>
-
-<ng-container *ngIf="show">
-    <div>
-       <app-place-filter></app-place-filter>
-    </div>
+<mat-button-toggle-group>
+    <mat-button-toggle type="button" (click)="ShowDiv('places')">Places</mat-button-toggle>
+    <mat-button-toggle type="button" (click)="ShowDiv('programs')">Programs</mat-button-toggle>
+</mat-button-toggle-group>
+<ng-container *ngIf="currDiv == 'places'">
+    <app-place-filter></app-place-filter>
+</ng-container>
+<ng-container *ngIf="currDiv  == 'programs'">
+    <app-program-filter></app-program-filter>
 </ng-container>

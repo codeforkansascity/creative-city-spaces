@@ -4,12 +4,13 @@
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-    <br><br>
+    <br>
     <mat-form-field>
-        <mat-select (selectionChange)='setType($event.value)'>
+        <mat-select (selectionChange)='setType($event.value)' placeholder="Type of event">
             <mat-option *ngFor='let t of types' [value]='t.type'>{{ t.type }}</mat-option>
         </mat-select>
     </mat-form-field>
+    <br>
     <!-- Type<br>
     <select>
         <option value="type1+type2+type3">All</option>
@@ -17,18 +18,18 @@
         <option value="type2">Type2</option>
         <option value="type3">Type3</option>
     </select><br><br> -->
-    Primary Function<br>
     <select>
         <option value="primaryfunction1">Primary Function1</option>
         <option value="primaryfunction2">Primary Function2</option>
         <option value="primaryfunction3">Primary Function3</option>
         <option value="primaryfunction4">Primary Function4</option>
-    </select><br><br>
-    Event Council District<br>
+    </select>
+    <br>
+    <br>
     <select>
         <option value="eventcouncildistrict1">Event Council District1</option>
         <option value="eventcouncildistrict2">Event Council District2</option>
         <option value="eventcouncildistrict3">Event Council District3</option>
     </select><br><br>
     <input type="submit" value="Submit">
-</div>
+  </div>
