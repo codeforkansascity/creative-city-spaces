@@ -11,6 +11,12 @@ export class ProgramFilterComponent implements OnInit {
   types = [
     {type: 'Annual'}, {type: 'One-Time Event'}, {type: 'Series Of Events'}
   ];
+  primary_functions = [
+    {primary_function:'Educational'},{primary_function:'Social'},{primary_function:'Cultural'},{primary_function:'Historic'}
+  ]
+  event_council_districts = [
+    {event_council_district:'1'},{event_council_district:'2'},{event_council_district:'3'},{event_council_district:'4'},{event_council_district:'5'}
+  ];
 
   data: any[];
 
