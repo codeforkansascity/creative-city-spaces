@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-import {DataPointsService} from './data-points.service';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
+import {MatIconRegistry} from '@angular/material/icon';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +9,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AppComponent {
   title = 'ccs';
-  constructor(private matIconRegistry: MatIconRegistry,
-              private domSanitizer: DomSanitizer) {
+  constructor(
+      private matIconRegistry: MatIconRegistry,
+      private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
-      `programs`,
-      this.domSanitizer.bypassSecurityTrustResourceUrl(`././assets/menu-buttons/programs.png`)
-    );
-}
+        `programs`,
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+            `././assets/menu-buttons/programs.png`));
+  }
 }

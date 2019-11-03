@@ -6,9 +6,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
-import { MatCardModule, MatButtonToggleModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
-import {MatListModule} from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
 import {AppComponent} from './app.component';
 import {FilterContainerComponent} from './filter-container/filter-container.component';
 import {HomeComponent} from './home/home.component';
@@ -28,9 +25,16 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, HomeComponent, InfowindowComponent, PlaceFilterComponent,
-    FilterContainerComponent, MapContainerComponent, ProgramFilterComponent,
-    PointDetailsComponent, NavigationComponent, Navigation2Component,
+    AppComponent,
+    HomeComponent,
+    InfowindowComponent,
+    PlaceFilterComponent,
+    FilterContainerComponent,
+    MapContainerComponent,
+    ProgramFilterComponent,
+    PointDetailsComponent,
+    NavigationComponent,
+    Navigation2Component,
   ],
   imports: [
     [RouterModule.forRoot(routes)],
@@ -42,18 +46,9 @@ const routes: Routes = [
     FlexLayoutModule,
     HttpClientModule,
     MaterialImportsModule,
-    MatCardModule,
-    MatIconModule,
-    MatButtonToggleModule,
-    MatSidenavModule,
-    MatListModule
+    MaterialImportsModule,
   ],
-  exports: [
-    MatToolbarModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatListModule
-  ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

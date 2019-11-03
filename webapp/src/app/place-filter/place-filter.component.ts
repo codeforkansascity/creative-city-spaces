@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DataPointsService} from '../data-points.service';
+import {DataPointsService} from '../services/data-points.service';
 
 @Component({
   selector: 'app-place-filter',

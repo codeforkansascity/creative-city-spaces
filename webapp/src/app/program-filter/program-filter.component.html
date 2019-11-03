@@ -1,17 +1,46 @@
-<div class="program-filter">
-    <mat-form-field>
-        <input matInput [matDatepicker]="picker">
-        <mat-placeholder class="placeholder">Choose a Date</mat-placeholder>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <br>
-    <mat-form-field>
-        <mat-select (selectionChange)='setType($event.value)' placeholder="Type of event">
-            <mat-option *ngFor='let t of types' [value]='t.type'>{{ t.type }}</mat-option>
-        </mat-select>
-        <mat-label>Type of Event</mat-label>
-    </mat-form-field>
-    <br>
-    <select>
-        <option value="type1+type2+type3">All</option>
+<div [formGroup]='form' fxLayout='column'>
+    <div>
+        <mat-form-field>
+            <input matInput formControlName='beginDate' [matDatepicker]="startPicker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+            <mat-datepicker #startPicker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <input matInput formControlName='endDate' [matDatepicker]="endPicker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+            <mat-datepicker #endPicker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div>
+        <button mat-raised-button color='accent' (click)='clear()'>Clear</button>
+    </div>
+    <div class='mat-subheading-1'>Types</div>
+    <mat-checkbox *ngFor='let t of form.controls.types.controls; let i = index' [value]='typesData[i].type'
+        [formControl]='t'>{{ typesData[i].type }}
+    </mat-checkbox>
+    <div>
+        <button mat-raised-button [disabled]='!canApply()' color='primary' (click)='apply()'>Apply</button>
+    </div>
+    <hr />
+
+    <div class='mat-subheading-1'>Primary Function</div>
+    <mat-checkbox *ngFor='let p of form.controls.priFunc.controls; let i = index'
+        [value]='primaryFunctions[i].primary_function' [formControl]='p'>{{ primaryFunctions[i].primary_function }}
+    </mat-checkbox>
+    <div>
+        <button mat-raised-button [disabled]='!canApply()' color='primary' (click)='apply()'>Apply</button>
+    </div>
+
+    <hr />
+
+    <div class='mat-subheading-1'>Districts</div>
+    <mat-checkbox *ngFor='let d of form.controls.districts.controls; let i = index' [formControl]='d'>
+        {{ councilDistricts[i] }}</mat-checkbox>
+</div>
+
+
+<div>
+    <button mat-raised-button [disabled]='!canApply()' color='primary' (click)='apply()'>Apply</button>
+</div>
