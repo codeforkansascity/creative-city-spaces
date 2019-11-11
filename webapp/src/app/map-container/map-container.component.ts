@@ -23,10 +23,43 @@ import {ProgramDataService} from '../services/program-data.service';
   //     ])]
 })
 export class MapContainerComponent implements OnInit {
+
+  constructor(private dp: DataPointsService, private pds: ProgramDataService) {}
   points: any[];
   selected: any = undefined;
 
-  constructor(private dp: DataPointsService, private pds: ProgramDataService) {}
+  private _mapIcons = {
+    attractions: {
+      url: 'assets/map-pins/mp_yellow.svg',
+      scaledSize: { width: 30, height: 30 }
+    },
+    fountains: {
+      url: 'assets/map-pins/mp_turquoise.svg',
+      scaledSize: { width: 30, height: 30 }
+    },
+    museums: {
+      url: 'assets/map-pins/mp_orange.svg',
+      scaledSize: { width: 30, height: 30 }
+    },
+    'public art': {
+      url: 'assets/map-pins/mp_green.svg',
+      scaledSize: { width: 30, height: 30 }
+    },
+    theater: {
+      url: 'assets/map-pins/mp_pink.svg',
+      scaledSize: { width: 30, height: 30 }
+    },
+    'historical monuments and memorials': {
+      url: 'assets/map-pins/mp_purple.svg',
+      scaledSize: { width: 30, height: 30 }
+    }
+  };
+  public get mapIcons() {
+    return this._mapIcons;
+  }
+  public set mapIcons(value) {
+    this._mapIcons = value;
+  }
 
   ngOnInit() {
     this.dp.points.pipe(filter(p => p !== undefined || p !== null))
@@ -39,33 +72,6 @@ export class MapContainerComponent implements OnInit {
           this.points = p;
         });
   }
-
-  mapIcons = {
-    'attractions': {
-      url: 'assets/map-pins/mp_orange.svg',
-      scaledSize: {width: 30, height: 30}
-    },
-    'fountains': {
-      url: 'assets/map-pins/mp_green.svg',
-      scaledSize: {width: 30, height: 30}
-    },
-    'museums': {
-      url: 'assets/map-pins/mp_pink.svg',
-      scaledSize: {width: 30, height: 30}
-    },
-    'public art': {
-      url: 'assets/map-pins/mp_yellow.svg',
-      scaledSize: {width: 30, height: 30}
-    },
-    'theater': {
-      url: 'assets/map-pins/mp_turquoise.svg',
-      scaledSize: {width: 30, height: 30}
-    },
-    'historical monuments and memorials': {
-      url: 'assets/map-pins/mp_purple.svg',
-      scaledSize: {width: 30, height: 30}
-    }
-  };
 
   getIcon(p): string {
     return this.mapIcons[p.type.toLowerCase()];
