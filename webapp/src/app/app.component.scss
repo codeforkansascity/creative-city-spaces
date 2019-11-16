@@ -1,1 +1,33 @@
+.logo {
+  width: 4rem;
+  height: auto;
+  margin-top: 0.50rem;
+  margin-left: -0.50rem;
+}
 
+h1 {
+  margin-left: 0.25rem;
+  font-size: 2.5rem;
+  font-weight: 100;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.navigation {
+  margin-top: 1rem;
+}
+
+.navigation a {
+  padding: 0.30rem;
+  text-decoration: none;
+}
+
+.navigation a {
+  color: #32c0c4;
+}
+
+.navigation a:active {
+  color: white;
+}
