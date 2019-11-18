@@ -1,7 +1,14 @@
 <div fxLayout='column' fxLayoutAlign='center'>
   <div *ngFor='let t of interestTypes'>
     <mat-button-toggle (change)='toggleFilter(t.type, $event.source.checked)'>
-      <span><img ng-src="[getImg]='getImg(t.type)'" class="menu_button"></span>
+      <ul>
+         <li><img src="assets/menu-buttons/attractions.png"></li>
+         <li><img src="assets/menu-buttons/fountains.png"></li>
+         <li><img src="assets/menu-buttons/museums.png"></li>
+         <li><img src="assets/menu-buttons/public-art.png"></li>
+         <li><img src="assets/menu-buttons/theaters.png"></li>
+         <li><img src="assets/menu-buttons/historical.png"></li>
+      </ul>
     </mat-button-toggle>
   </div>
 </div>
