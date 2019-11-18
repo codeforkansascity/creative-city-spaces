@@ -1,14 +1,19 @@
-point-details {
+.point-details {
+  margin-top: 1rem;
   display: flex;
-  height: 95vh;
+  width: 78vw;
+  height: 90vh;
 }
 
 img {
+  padding-top: 1rem;
+  padding-left: 1rem;
   width: 10em;
   height: auto;
 }
 
 .text {
+  padding-left: 1rem;
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
 }
@@ -23,5 +28,5 @@ img {
 
  a, a:active, a:visited {
    text-decoration: none;
-   color: cyan;
+   color: #32c0c4;
  }
