@@ -8,49 +8,34 @@ import {ProgramDataService} from '../services/program-data.service';
   templateUrl: './place-filter.component.html',
   styleUrls: ['./place-filter.component.scss']
 })
+
 export class PlaceFilterComponent implements OnInit {
+
+  constructor(private dp: DataPointsService, ) {}
   interestTypes: [any];
   filters: string[] = [];
+  selected: any = undefined;
 
-  // tslint:disable-next-line: max-line-length
-  // tslint:disable-next-line: variable-name
-  private _menuButton = {
+
+  private _buttons = {
     attractions: {
-      url: 'assets/menu-buttons/mb-attractions.png',
-      scaledSize: { width: 50, height: 50 }
-    },
-    fountains: {
-      url: './././assets/menu-buttons/mb-fountains.png',
-      scaledSize: { width: 50, height: 50 }
-    },
-    museums: {
-      url: './././assets/menu-buttons/mb-museums.png',
-      scaledSize: { width: 50, height: 50 }
-    },
-    'public art': {
-      url: './././assets/menu-buttons/mb-public-art.png',
-      scaledSize: { width: 50, height: 50 }
-    },
-    theater: {
-      url: './././assets/menu-buttons/mb-theater.png',
-      scaledSize: { width: 50, height: 50 }
-    },
-    'historical monuments and memorials': {
-      url: './././assets/menu-buttons/mb-historical.png',
-      scaledSize: { width: 50, height: 50 }
-    },
+      url: 'assets/menu-buttons/attractions.png'},
+    fountains: {url: 'assets/menu-buttons/fountains.png'},
+    museums: {url: 'assets/menu-buttons/museums.png'},
+    'public art': {url: 'assets/menu-buttons/public-art.png'},
+    theater: {url: 'assets/menu-buttons/theater.png'},
+    'historical monuments and memorials' : {url: 'assets/menu-buttons/historical.png'}
   };
-  public get menuButton() {
-    return this._menuButton;
+  public get buttons() {
+    return this._buttons;
   }
-  public set menuButton(value) {
-    this._menuButton = value;
+  public set buttons(value) {
+    this._buttons = value;
   }
-
-  constructor(private dp: DataPointsService) {}
 
   ngOnInit() {
     this.dp.getDistinctTypes().subscribe(d => this.interestTypes = d);
+    
   }
 
   toggleFilter(type: string, checked: boolean) {
@@ -63,9 +48,7 @@ export class PlaceFilterComponent implements OnInit {
     } else {
       this.filters.push(type);
     }
-    // update the data set
     this.dp.applyFilters(this.filters);
   }
-
 
 }
