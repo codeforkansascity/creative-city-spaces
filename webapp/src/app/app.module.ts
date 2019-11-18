@@ -7,6 +7,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import {MatCardModule} from '@angular/material/card';
 import {AppComponent} from './app.component';
 import {FilterContainerComponent} from './filter-container/filter-container.component';
 import {HomeComponent} from './home/home.component';
@@ -51,8 +52,11 @@ const routes: Routes = [
     HttpClientModule,
     MaterialImportsModule,
     MaterialImportsModule,
+    MatCardModule
   ],
-  exports: [],
+  exports: [
+    MatCardModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

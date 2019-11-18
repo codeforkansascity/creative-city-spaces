@@ -61,6 +61,7 @@ export class MapContainerComponent implements OnInit {
     this._mapIcons = value;
   }
 
+
   ngOnInit() {
     this.dp.points.pipe(filter(p => p !== undefined || p !== null))
         .subscribe(p => {

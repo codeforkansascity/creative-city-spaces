@@ -6,4 +6,9 @@
     </agm-map>
 </div>
 
-<app-point-details [data]='selected' *ngIf='showDetails()' [@slideInOut] (clear)='clearSelection()'></app-point-details>
+<div class="mat-app-background basic-container">
+    <app-point-details [data]='selected' [@slideInOut] *ngIf='showDetails()' (clear)='clearSelection()'></app-point-details>
+</div>
+
+
+<!--<app-point-details [data]='selected' *ngIf='showDetails()' (clear)='clearSelection()'>Point Details</app-point-details>-->

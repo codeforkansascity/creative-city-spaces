@@ -1,18 +1,18 @@
 <div fxFlex='1 1 100%' class="point-details">
-  <div fxLayout='row'>
-      <button mat-button (click)='clearDetails()'>
-          <mat-icon>chevron_right</mat-icon>
-      </button>
-      <div>
-        <div class="text">
-            <div>{{ data.name }}</div>
-            <div>
-                <div>{{ data.type }}</div>
-                <img src="././assets/photo_placeholder.png" alt="photo placeholder" height="115" width="83">
-                <p class="description">{{ data.description }}</p>
-                <div class="contacts">Contacts</div>
-                <p class="address">{{ data.address }}<br>
-                    <br class="phone">Phone #<br><a class="url" href="{{data.contact_information.url}}" target=”_blank”>{{ data.contact_information.url}}</a> </p>
-                  <!--<p>{{ data | json }}</p>-->
-            </div>
-        </div>
+    <div fxLayout='row'>
+        <button mat-button (click)='clearDetails()'>
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+        <div>
+          <div class="text">
+              <div>{{ data.name }}</div>
+              <div>
+                  <div>{{ data.type }}</div>
+                  <img src="././assets/photo_placeholder.png" alt="photo placeholder" height="115" width="83">
+                  <p class="description">{{ data.description }}</p>
+                  <div class="contacts">Contacts</div>
+                  <p class="address">{{ data.address }}<br>
+                      <br class="phone">Phone #<br><a class="url" href="{{data.contact_information.url}}" target=”_blank”>{{ data.contact_information.url}}</a> </p>
+                    <!--<p>{{ data | json }}</p>-->
+              </div>
+          </div>
