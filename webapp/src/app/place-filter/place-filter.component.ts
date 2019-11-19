@@ -19,13 +19,37 @@ export class PlaceFilterComponent implements OnInit {
 
   private _buttons = {
     attractions: {
-      url: 'assets/menu-buttons/attractions.png'},
-    fountains: {url: 'assets/menu-buttons/fountains.png'},
-    museums: {url: 'assets/menu-buttons/museums.png'},
-    'public art': {url: 'assets/menu-buttons/public-art.png'},
-    theater: {url: 'assets/menu-buttons/theater.png'},
-    'historical monuments and memorials' : {url: 'assets/menu-buttons/historical.png'}
+      url: 'assets/menu-buttons/attractions.png',
+
+    },
+    fountains: {
+      url: 'assets/menu-buttons/fountains.png',
+
+    },
+    museums: {
+      url: 'assets/menu-buttons/museums.png',
+    
+    },
+    'public art': {
+      url: 'assets/menu-buttons/public-art.png',
+    
+    },
+    theater: {
+      url: 'assets/menu-buttons/theaters.png',
+   
+    },
+    'historical monuments and memorials': {
+      url: 'assets/menu-buttons/historical.png',
+     
+    }  
+
   };
+
+getButtonImage(key): string{
+  return this._buttons[key.toLowerCase()].url;
+  
+}
+
   public get buttons() {
     return this._buttons;
   }
