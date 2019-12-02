@@ -16,7 +16,6 @@ export class PlaceFilterComponent implements OnInit {
   filters: string[] = [];
   selected: any = undefined;
 
-
   private _buttons = {
     attractions: {
       url: 'assets/menu-buttons/attractions.png',
@@ -28,38 +27,17 @@ export class PlaceFilterComponent implements OnInit {
     },
     museums: {
       url: 'assets/menu-buttons/museums.png',
-    
-    },
-    'public art': {
-      url: 'assets/menu-buttons/public-art.png',
-    
-    },
-    theater: {
-      url: 'assets/menu-buttons/theaters.png',
-   
-    },
-    'historical monuments and memorials': {
-      url: 'assets/menu-buttons/historical.png',
-     
-    }  
-
-  };
-
-getButtonImage(key): string{
-  return this._buttons[key.toLowerCase()].url;
-  
-}
-
-  public get buttons() {
-    return this._buttons;
   }
-  public set buttons(value) {
-    this._buttons = value;
-  }
+
+    public get buttons() {
+      return this._buttons;
+    }
+    public set buttons(value) {
+      this._buttons = value;
+    }
 
   ngOnInit() {
     this.dp.getDistinctTypes().subscribe(d => this.interestTypes = d);
-    
   }
 
   toggleFilter(type: string, checked: boolean) {
@@ -74,5 +52,4 @@ getButtonImage(key): string{
     }
     this.dp.applyFilters(this.filters);
   }
-
 }

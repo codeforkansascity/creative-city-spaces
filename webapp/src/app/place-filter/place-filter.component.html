@@ -1,7 +1,7 @@
 <div fxLayout='column' fxLayoutAlign='center'>
-  <div *ngFor='let t of interestTypes'>
-    <mat-button-toggle (change)='toggleFilter(t.type, $event.source.checked)'>
-   <img [src]="getButtonImage(t.type)" [alt]="t.type">
-    </mat-button-toggle>
+  <div *ngFor='let t of interestTypes' class="buttons">
+      <mat-button-toggle (change)='toggleFilter(t.type, $event.source.checked)' class="button">
+        <img [src]="getButtonImage(t.type)" [alt]="t.type" aria-label="Click to select 1. Attractions 2. Fountains 3. Historical Sites 4. Museums 5. Public Art or 6. Theaters. Buttons are stacked from top to bottom.">
+      </mat-button-toggle>
   </div>
 </div>
