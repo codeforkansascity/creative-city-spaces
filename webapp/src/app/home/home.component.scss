@@ -1,38 +1,42 @@
 .fxFlex {
-  height: 93vh;
+  margin-left: -0.10rem;
+  height: 85vh;
+  width: auto;
   display: flex;
   z-index: 5;
 }
 
 .column {
   display: flex;
-  height: 95vh;
+  margin-left: -0.20rem;
+  height: 85vh;
+  width: auto;
   z-index: 1;
 }
 
 .example-container {
-  margin-top: 1rem;
-  height: 95vh;
+  height: 85vh;
+  width: auto;
   display: flex;
-  z-index: 1;
 }
 
 .example-sidenav {
-  height: 95vh;
+  height: 85vh;
+  width: auto;
   display: flex;
   z-index: 1;
 }
 
 .example-sidenav-content {
-  height: 95vh;
+  height: 85vh;
   display: flex;
   width: 3.5rem;
   z-index: 1;
 }
 
 .filter-button {
-  margin-top: 0.50rem;
-  margin-left: 0.20rem;
+  margin-top: 0.75rem;
+  margin-left: 0.75rem;
   background-color: black;
   display: flex;
   z-index: 1;
@@ -111,6 +115,6 @@ img {
 }
 
 app-map-container {
-  height: 1vh;
+  height: 85vh;
   z-index: 1;
 }

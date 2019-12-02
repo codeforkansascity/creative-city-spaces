@@ -1,4 +1,10 @@
+.background {
+  height: 1vh;
+}
+
 mat-toolbar {
+  margin-left: -0.50rem;
+  width: auto;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -35,4 +41,8 @@ h1 {
 
 .navigation a:active {
   color: white;
+}
+
+#skip-to-main-content {
+  color: rgb(0,0,0,0)
 }

@@ -1,14 +1,17 @@
 <div fxLayout='column' fxLayoutAlign='center'>
-  <div *ngFor='let t of interestTypes'>
-    <mat-button-toggle (change)='toggleFilter(t.type, $event.source.checked)'>
-      <ul>
-         <li><img src="assets/menu-buttons/attractions.png"></li>
-         <li><img src="assets/menu-buttons/fountains.png"></li>
-         <li><img src="assets/menu-buttons/museums.png"></li>
-         <li><img src="assets/menu-buttons/public-art.png"></li>
-         <li><img src="assets/menu-buttons/theaters.png"></li>
-         <li><img src="assets/menu-buttons/historical.png"></li>
-      </ul>
-    </mat-button-toggle>
+  <div *ngFor='let t of interestTypes' class="buttons">
+    <!--<mat-button-toggle-group>-->
+      <mat-button-toggle (change)='toggleFilter(t.type, $event.source.checked)' class="button">
+        <img [src]="getButtonImage(t.type)" [alt]="t.type" aria-label="Click to select 1. Attractions 2. Fountains 3. Historical Sites 4. Museums 5. Public Art or 6. Theaters. Buttons are stacked from top to bottom.">
+        <!--<ul class="button_img">
+          <li *ngIf='t == "attractions"'><img src="assets/menu-buttons/attractions.png"></li>
+          <li *ngIf='t == "fountains"'><img src="assets/menu-buttons/fountains.png"></li>
+          <li *ngIf='t == "museums"'><img src="assets/menu-buttons/museums.png"></li>
+          <li *ngIf='t == "public art"'><img src="assets/menu-buttons/public-art.png"></li>
+          <li *ngIf='t == "theaters"'><img src="assets/menu-buttons/theaters.png"></li>
+          <li><img src="assets/menu-buttons/historical.png"></li>
+       </ul>-->
+      </mat-button-toggle>
+    <!--</mat-button-toggle-group>-->
   </div>
 </div>
