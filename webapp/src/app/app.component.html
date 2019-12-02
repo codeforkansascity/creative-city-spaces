@@ -4,9 +4,10 @@
   <h1>Creative City Spaces</h1>
   <div class="fill-remaining-space"></div>
   <div class="navigation">
-      <a class="nav-link" routerLink="home" routerLinkActive="active" id="skip-to-main-content" [routerLink] = "'/home'">Skip to Main Content</a>
-      <a class="nav-link" routerLink="about" routerLinkActive="active" [routerLink] = "'/about'">About</a>
-      <a class="nav-link" routerLink="home" routerLinkActive="active" [routerLink] = "'/home'">Home</a>
+      <a class="nav-link" routerLink="home" routerLinkActive="active" id="skip-to-main-content" [routerLink] = "'/home'" aria-label="Skip to Main Content"></a>
+      <a class="nav-link" routerLink="home" routerLinkActive="active" [routerLink] = "'/home'" aria-label="Click to navigate to the map page">Home</a>
+      <a class="nav-link" routerLink="about" routerLinkActive="active" [routerLink] = "'/about'" aria-label="Click for information about how to use this site and who to contact for more information.">Instructions</a>
+
   </div>
 </mat-toolbar>
 
