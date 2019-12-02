@@ -5,13 +5,13 @@
         </button>
         <div>
           <div class="text">
-              <div>{{ data.name }}</div>
+              <div>{{ data.name || data.event_project_title }}</div>
               <div>
                   <div>{{ data.type }}</div>
                   <img src="././assets/photo_placeholder.png" alt="photo placeholder" height="115" width="83">
-                  <p class="description">{{ data.description }}</p>
+                  <p class="description">{{ data.description  || data.event_project_description }}</p>
                   <div class="contacts">Contacts</div>
-                  <p class="address">{{ data.address }}<br>
+                  <p class="address">{{ data.address || data.location }}<br>
                       <br class="phone">Phone #<br><a class="url" href="{{data.contact_information.url}}" target=”_blank”>{{ data.contact_information.url}}</a> </p>
                     <!--<p>{{ data | json }}</p>-->
               </div>
