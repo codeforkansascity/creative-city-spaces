@@ -1,4 +1,4 @@
-<div class='map' fxFlex='1 1 100%' #map fxLayout='column' aria-label="Map of the Kansas City Metropolitan Area. When you select places and programs, map pins will appear on the map. Click on individual map pins for more information about the site or event.">
+<div class='map' fxFlex='1 1 100%' #map fxLayout='column'>
     <agm-map [latitude]='39.084573' [longitude]='-94.585204'>
         <agm-marker *ngFor='let p of points' [latitude]='p.lat' [longitude]='p.lng' (markerClick)='select(p)'
             [iconUrl]='getIcon(p)'>
@@ -6,7 +6,7 @@
     </agm-map>
 </div>
 
-<div class="mat-app-background basic-container" id="map-background">
+<div class="mat-app-background basic-container">
     <app-point-details [data]='selected' [@slideInOut] *ngIf='showDetails()' (clear)='clearSelection()'></app-point-details>
 </div>
 
