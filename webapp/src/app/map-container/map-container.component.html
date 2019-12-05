@@ -1,14 +1,13 @@
-<div class='map' fxFlex='1 1 100%' #map fxLayout='column'>
-    <agm-map [latitude]='39.084573' [longitude]='-94.585204'>
-        <agm-marker *ngFor='let p of points' [latitude]='p.lat' [longitude]='p.lng' (markerClick)='select(p)'
-            [iconUrl]='getIcon(p)'>
-        </agm-marker>
-    </agm-map>
+<div fxLayout='row'>
+    <div class='map' fxFlex='1 1 100%' #map fxLayout='column'>
+        <agm-map [latitude]='39.084573' [longitude]='-94.585204' [zoom]='12'>
+            <agm-marker *ngFor='let p of points' [latitude]='p.lat' [longitude]='p.lng' (markerClick)='select(p)'
+                [iconUrl]='getIcon(p)'>
+            </agm-marker>
+        </agm-map>
+    </div>
+
+    <app-point-details fxLayoutAlign='center start' fxFlex='50%' [data]='selected' *ngIf='showDetails()'
+        (clear)='clearSelection()'>
+    </app-point-details>
 </div>
-
-<div class="mat-app-background basic-container">
-    <app-point-details [data]='selected' [@slideInOut] *ngIf='showDetails()' (clear)='clearSelection()'></app-point-details>
-</div>
-
-
-<!--<app-point-details [data]='selected' *ngIf='showDetails()' (clear)='clearSelection()'>Point Details</app-point-details>-->

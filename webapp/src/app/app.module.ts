@@ -6,8 +6,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule, Routes} from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
-import {MatCardModule} from '@angular/material/card';
+
+import {AboutComponent} from './about/about.component';
+import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {FilterContainerComponent} from './filter-container/filter-container.component';
 import {HomeComponent} from './home/home.component';
@@ -19,7 +20,6 @@ import {Navigation2Component} from './navigation2/navigation2.component';
 import {PlaceFilterComponent} from './place-filter/place-filter.component';
 import {PointDetailsComponent} from './point-details/point-details.component';
 import {ProgramFilterComponent} from './program-filter/program-filter.component';
-import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -42,7 +42,7 @@ const routes: Routes = [
   ],
   imports: [
     [RouterModule.forRoot(routes)],
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyCPQpQYFtvmIoRfkNSlYm_Wri-O30Y1fkY'}),
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyCQ1UU0RvnATRoJEngj9gj0v73FLfOmgfo'}),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -52,11 +52,8 @@ const routes: Routes = [
     HttpClientModule,
     MaterialImportsModule,
     MaterialImportsModule,
-    MatCardModule
   ],
-  exports: [
-    MatCardModule,
-  ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

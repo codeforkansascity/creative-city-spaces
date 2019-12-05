@@ -1,5 +1,5 @@
-import {animate, style, transition, trigger} from '@angular/animations';
 import {Component, OnInit} from '@angular/core';
+import {combineLatest} from 'rxjs';
 import {filter} from 'rxjs/operators';
 
 import {DataPointsService} from '../services/data-points.service';
@@ -10,20 +10,8 @@ import {ProgramDataService} from '../services/program-data.service';
   selector: 'app-map-container',
   templateUrl: './map-container.component.html',
   styleUrls: ['./map-container.component.scss'],
-  // animations: [trigger(
-  //     'slideInOut',
-  //     [
-  //       transition(
-  //           ':enter',
-  //           [animate('1200ms ease-in', style({transform:
-  //           'translateX(0%)'}))]),
-  //       transition(':leave', [animate(
-  //                                '1200ms ease-out',
-  //                                style({transform: 'translateX(100%)'}))])
-  //     ])]
 })
 export class MapContainerComponent implements OnInit {
-
   constructor(private dp: DataPointsService, private pds: ProgramDataService) {}
   points: any[];
   selected: any = undefined;
@@ -31,28 +19,52 @@ export class MapContainerComponent implements OnInit {
   private _mapIcons = {
     attractions: {
       url: 'assets/map-pins/mp_yellow.svg',
-      scaledSize: { width: 30, height: 30 }
+      scaledSize: {width: 30, height: 30}
     },
     fountains: {
       url: 'assets/map-pins/mp_turquoise.svg',
-      scaledSize: { width: 30, height: 30 }
+      scaledSize: {width: 30, height: 30}
     },
     museums: {
       url: 'assets/map-pins/mp_orange.svg',
-      scaledSize: { width: 30, height: 30 }
+      scaledSize: {width: 30, height: 30}
     },
     'public art': {
       url: 'assets/map-pins/mp_green.svg',
-      scaledSize: { width: 30, height: 30 }
+      scaledSize: {width: 30, height: 30}
     },
     theater: {
       url: 'assets/map-pins/mp_pink.svg',
-      scaledSize: { width: 30, height: 30 }
+      scaledSize: {width: 30, height: 30}
     },
     'historical monuments and memorials': {
       url: 'assets/map-pins/mp_purple.svg',
-      scaledSize: { width: 30, height: 30 }
-    }
+      scaledSize: {width: 30, height: 30}
+    },
+    'cultural': {
+      url: 'assets/map-pins/mp_program_orange.svg',
+      scaledSize: {width: 30, height: 30}
+    },
+    'educational': {
+      url: 'assets/map-pins/mp_program_purple.svg',
+      scaledSize: {width: 30, height: 30}
+    },
+    'ethnic': {
+      url: 'assets/map-pins/mp_program_green.svg',
+      scaledSize: {width: 30, height: 30}
+    },
+    'historic': {
+      url: 'assets/map-pins/mp_program_pink.svg',
+      scaledSize: {width: 30, height: 30}
+    },
+    'recreational': {
+      url: 'assets/map-pins/mp_program_turquoise.svg',
+      scaledSize: {width: 30, height: 30}
+    },
+    'social': {
+      url: 'assets/map-pins/mp_program_yellow.svg',
+      scaledSize: {width: 30, height: 30}
+    },
   };
   public get mapIcons() {
     return this._mapIcons;
@@ -61,21 +73,20 @@ export class MapContainerComponent implements OnInit {
     this._mapIcons = value;
   }
 
-
   ngOnInit() {
-    this.dp.points.pipe(filter(p => p !== undefined || p !== null))
+    combineLatest(
+        this.dp.points.pipe(filter(p => p !== undefined || p !== null)),
+        this.pds.programs.pipe(filter(p => p !== undefined || p !== null)))
         .subscribe(p => {
-          this.points = p;
-        });
-
-    this.pds.programs.pipe(filter(p => p !== undefined || p !== null))
-        .subscribe(p => {
-          this.points = p;
+          this.points = [].concat.apply([], p) || [];
         });
   }
 
   getIcon(p): string {
-    return this.mapIcons[p.type.toLowerCase()];
+    if (p.tp) {
+      return this.mapIcons[p.tp.toLowerCase()];
+    }
+    return undefined;
   }
 
   select(p) {

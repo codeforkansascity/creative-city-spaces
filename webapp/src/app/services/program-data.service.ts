@@ -30,6 +30,7 @@ export class ProgramDataService {
       this.makeTypeFilter(types),
       this.makePrimaryFunctionFilter(primaryFunctions),
       this.makeDateFilter(begin, end),
+      this.makeEventCouncilDistrictFilter(districts),
     ];
 
     const fp = filters.filter(f => !!f).join(' AND ');
@@ -37,17 +38,29 @@ export class ProgramDataService {
     console.log(fp);
     this.client
         .get<any[]>(
-            `https://data.kcmo.org/resource/4j37-ebgz.json?$query= select * where ${
-                fp}`)
+            `https://data.kcmo.org/resource/4j37-ebgz.json?$query= select 'program' as datatype, primary_function as tp,
+            organization || ' ' || organization_address || ', ' || organization_city
+            || ', ' || organization_state || ', ' || organization_zip as org_info,
+            event_project_title as name, event_project_description as description,
+            activity_address || ', ' || activity_zip as address,
+            geocoded_column, activity_coordinates
+              where ${fp}`)
         .subscribe(d => {
-          this.programsSubject.next(d.map(this.addLatLng));
+          this.programsSubject.next(d.map(this.addLatLng).filter(p => !!p));
         });
   }
 
   private addLatLng(p: any): any {
-    if (!!p.geocoded_column) {
+    if (!!p.activity_coordinates) {
+      const z = p.activity_coordinates.split(' ');
+      p.lat = z[0];
+      p.lng = z[1];
+    } else if (!!p.geocoded_column) {
       p.lat = p.geocoded_column.coordinates[1];
       p.lng = p.geocoded_column.coordinates[0];
+    }
+    if (!p.lat || !p.lng) {
+      return undefined;
     }
     return p;
   }
@@ -66,14 +79,15 @@ export class ProgramDataService {
     return undefined;
   }
 
-  // setEventCouncilDistrictFilter(ecd: any[]) {
-  //   if (ecd && ecd.length > 0) {
-  //     this.ecdFilter = `event_council_district in (${ecd.join(',')})`;
-  //   } else {
-  //     this.ecdFilter = undefined;
-  //   }
-  //   this.executeQuery();
-  // }
+  private makeEventCouncilDistrictFilter(districts: any[]): string {
+    if (districts && districts.length > 0) {
+      const filter =
+          districts.map(z => `contains(event_council_district,'${z}')`)
+              .join(' OR ');
+      return `(${filter})`;
+    }
+    return undefined;
+  }
 
   private makePrimaryFunctionFilter(pf: any[]): string {
     if (pf && pf.length > 0) {
