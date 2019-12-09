@@ -27,6 +27,7 @@ h1 {
 .navigation a {
   padding: 0.30rem;
   text-decoration: none;
+  font-size: smaller;
 }
 
 .navigation a {
@@ -35,4 +36,16 @@ h1 {
 
 .navigation a:active {
   color: white;
+}
+
+.navigation a:hover {
+  color: white;
+}
+
+#skip-to-main-content {
+  color: rgb(0,0,0,0)
+}
+
+#home {
+  padding-right: 1rem;
 }
