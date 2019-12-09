@@ -53,6 +53,18 @@ export class ProgramFilterComponent implements OnInit {
         .forEach(c => (this.form.controls.districts as FormArray).push(c));
   }
 
+  get formTypes() {
+    return <FormArray>this.form.get('types');
+  }
+
+  get formPriFunc() {
+    return <FormArray>this.form.get('priFunc');
+  }
+
+  get formDistricts() {
+    return <FormArray>this.form.get('districts');
+  }
+
   clear() {
     this.form.reset();
   }
