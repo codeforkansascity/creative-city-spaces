@@ -1,10 +1,11 @@
 <mat-toolbar class="toolbar">
-  <img class = "logo" src = "./assets/culture_creative_services_logo.png">
+  <img class = "logo" src = "./assets/culture_creative_services_logo.png" alt="Logo for Department of Culture and Creative Services">
   <h1>Creative City Spaces</h1>
   <div class="fill-remaining-space"></div>
   <div class="navigation">
-      <a class="nav-link" routerLink="about" routerLinkActive="active" [routerLink] = "'/about'">About</a>
-      <a class="nav-link" routerLink="home" routerLinkActive="active" [routerLink] = "'/home'">Home</a>
+      <a class="nav-link" routerLink="home" routerLinkActive="active" id="skip-to-main-content" [routerLink] = "'/home'" alt="Skip to Main Content"></a>
+      <a class="nav-link" routerLink="home" routerLinkActive="active" id="home" [routerLink] = "'/home'" aria-label="Click to navigate to the map page">Home</a>
+      <a class="nav-link" routerLink="about" routerLinkActive="active" [routerLink] = "'/about'" aria-label="Click for information about how to use this site and who to contact for more information.">Instructions</a>
   </div>
 </mat-toolbar>
 

@@ -56,7 +56,7 @@ getButtonImage(key): string{
   public set buttons(value) {
     this._buttons = value;
   }
-
+  
   ngOnInit() {
     this.dp.getDistinctTypes().subscribe(d => this.interestTypes = d);
     
