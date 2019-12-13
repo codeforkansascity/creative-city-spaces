@@ -24,6 +24,16 @@ h1 {
   margin-top: 1rem;
 }
 
+#home {
+  padding-left: 0.50rem;
+  background-color: #32c0c4;
+}
+
+ #about {
+  padding-right: 0.50rem;
+  background-color: #32c0c4;
+}
+
 .navigation a {
   padding: 0.30rem;
   text-decoration: none;
@@ -31,21 +41,19 @@ h1 {
 }
 
 .navigation a {
-  color: #32c0c4;
-}
-
-.navigation a:active {
+  border: 2px solid #655c63;
   color: white;
 }
 
 .navigation a:hover {
-  color: white;
+  color: black;
+}
+
+.navigation a:active {
+  color: black;
 }
 
 #skip-to-main-content {
+  border: rgb(0,0,0,0);
   color: rgb(0,0,0,0)
-}
-
-#home {
-  padding-right: 1rem;
 }
