@@ -1,6 +1,6 @@
 <mat-button-toggle-group>
   <mat-button-toggle type="button" (click)="ShowDiv('places')">Places</mat-button-toggle>
-  <mat-button-toggle type="button" (click)="ShowDiv('programs')">Programs</mat-button-toggle>
+  <mat-button-toggle type="button" (click)="ShowDiv('programs')">Activities</mat-button-toggle>
 </mat-button-toggle-group>
 <ng-container *ngIf="currDiv == 'places'">
   <app-place-filter></app-place-filter>
