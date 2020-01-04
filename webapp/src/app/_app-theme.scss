@@ -1,7 +1,15 @@
-@mixin material-custom-theme($theme) {
+@mixin material-custom-theme($dark) {
     $background: map-get($theme, background);
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
     $warn: map-get($theme, warn);
     $foreground: map-get($theme, foreground);
+}
+
+@mixin material-custom-theme($light) {
+  $background: map-get($theme, background);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
 }
