@@ -21,7 +21,7 @@ export class ProgramDataService {
 
   applyFilter(
       types: string[], districts: string[], primaryFunctions: string[],
-      begin: string, end: string) {
+      begin: string, end: string, zipCodes: string[]) {
     // build a filter based on input
     // if there are no values for a given parameter, treat that as not filtered
     // at all
@@ -31,6 +31,7 @@ export class ProgramDataService {
       this.makePrimaryFunctionFilter(primaryFunctions),
       this.makeDateFilter(begin, end),
       this.makeEventCouncilDistrictFilter(districts),
+      this.makeZipCodeFilter(zipCodes)
     ];
 
     const fp = filters.filter(f => !!f).join(' AND ');
@@ -79,6 +80,13 @@ export class ProgramDataService {
     return undefined;
   }
 
+  private makeZipCodeFilter(zipCodes:any[]): string {
+    if(zipCodes && zipCodes.length > 0){
+      return `activity_zip in (${zipCodes.map(z => `'${z}'`).join(',')})`
+    }
+    return undefined;
+  }
+
   private makeEventCouncilDistrictFilter(districts: any[]): string {
     if (districts && districts.length > 0) {
       const filter =
@@ -110,4 +118,9 @@ export class ProgramDataService {
     return this.client.get<any[]>(
         'https://data.kcmo.org/resource/4j37-ebgz.json?$select=distinct%20event_council_district');
   }
+
+  getZipCodes(): Observable<any[]> {
+    return this.client.get<any[]>(
+        'https://data.kcmo.org/resource/4j37-ebgz.json?$select=distinct%20activity_zip');
+    }
 }

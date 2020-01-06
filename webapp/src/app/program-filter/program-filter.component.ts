@@ -14,6 +14,7 @@ export class ProgramFilterComponent implements OnInit {
   private typesData: any[];
   private primaryFunctions: any[];
   private councilDistricts: any[] = [1, 2, 3, 4, 5, 6];
+  private zipCodes: any[];
 
   constructor(
       private fb: FormBuilder, private dps: DataPointsService,
@@ -25,7 +26,8 @@ export class ProgramFilterComponent implements OnInit {
       endDate: [''],
       types: this.fb.array([]),
       districts: this.fb.array([]),
-      priFunc: this.fb.array([])
+      priFunc: this.fb.array([]),
+      zip: this.fb.array([])
     });
 
     this.pds.getTypes().subscribe(data => {
@@ -45,6 +47,15 @@ export class ProgramFilterComponent implements OnInit {
           })
           .forEach(c => (this.form.controls.priFunc as FormArray).push(c));
     });
+
+    this.pds.getZipCodes().subscribe(data => {
+      this.zipCodes = data;
+      this.zipCodes.filter(z => !!z.activity_zip)
+      .map(z => {
+        return this.fb.control(false);
+      })
+      .forEach(c => (this.form.controls.zip as FormArray).push(c));
+    })
 
     this.councilDistricts
         .map(d => {
@@ -84,8 +95,12 @@ export class ProgramFilterComponent implements OnInit {
     let cd = this.form.value.districts.map((v, i) => v ? i + 1 : undefined)
                  .filter(v => !!v);
 
+    let zc = this.form.value.zip
+    .map((v, i) => v ? this.zipCodes[i].activity_zip : undefined)
+    .filter(v => !!v);
+
     this.pds.applyFilter(
-        tp, cd, pf,
+        tp, cd, pf, zc,
         this.form.value.beginDate.valid ?
             this.form.value.beginDate.format('YYYY-MM-DD') :
             undefined,

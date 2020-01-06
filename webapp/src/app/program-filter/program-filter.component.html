@@ -39,9 +39,19 @@
     <div class='mat-subheading-1'>Districts</div>
     <mat-checkbox *ngFor='let d of formDistricts.controls; let i = index' [formControl]='d'>
         {{ councilDistricts[i] }}</mat-checkbox>
-</div>
+<!--</div>-->
 
 
 <div>
     <button mat-raised-button [disabled]='!canApply()' color='accent' (click)='apply()'>Apply</button>
+</div>
+
+<div class='mat-subheading-1'>Zipcode</div>
+<mat-checkbox *ngFor='let z of form.controls.zip.controls; let i = index'
+    [value]='zipCodes[i].activity_zip' [formControl]='z'>{{ zipCodes[i].activity_zip }}
+</mat-checkbox>
+<div>
+    <button mat-raised-button [disabled]='!canApply()' color='primary' (click)='apply()'>Apply</button>
+</div>
+
 </div>
