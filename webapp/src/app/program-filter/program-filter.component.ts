@@ -48,16 +48,17 @@ export class ProgramFilterComponent implements OnInit {
           .forEach(c => (this.form.controls.priFunc as FormArray).push(c));
     });
 
-    this.pds.getZipCodes().subscribe(data => {
-      this.zipCodes = data;
-      this.zipCodes.filter(z => !!z.activity_zip)
-      .map(z => {
-        return this.fb.control(false);
-      })
-      .forEach(c => (this.form.controls.zip as FormArray).push(c));
-    })
+    this.pds.getZipCodes()
+        .subscribe(data => {
+          this.zipCodes = data;
+          this.zipCodes.filter(z => !!z.activity_zip)
+              .map(z => {
+                return this.fb.control(false);
+              })
+              .forEach(c => (this.form.controls.zip as FormArray).push(c));
+        })
 
-    this.councilDistricts
+            this.councilDistricts
         .map(d => {
           return this.fb.control(false);
         })
@@ -74,6 +75,10 @@ export class ProgramFilterComponent implements OnInit {
 
   get formDistricts() {
     return <FormArray>this.form.get('districts');
+  }
+
+  get formZips() {
+    return <FormArray>this.form.get('zips');
   }
 
   clear() {
@@ -96,8 +101,8 @@ export class ProgramFilterComponent implements OnInit {
                  .filter(v => !!v);
 
     let zc = this.form.value.zip
-    .map((v, i) => v ? this.zipCodes[i].activity_zip : undefined)
-    .filter(v => !!v);
+                 .map((v, i) => v ? this.zipCodes[i].activity_zip : undefined)
+                 .filter(v => !!v);
 
     this.pds.applyFilter(
         tp, cd, pf, zc,
