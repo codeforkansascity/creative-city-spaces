@@ -1,7 +1,9 @@
 <div fxLayout='column' fxLayoutAlign='center'>
   <div *ngFor='let t of interestTypes'>
-    <mat-button-toggle (change)='toggleFilter(t.type, $event.source.checked)'>
-   <img [src]="getButtonImage(t.type)" [alt]="t.type">
-    </mat-button-toggle>
+    <mat-button-toggle-group class="alternate-theme">
+      <mat-button-toggle (change)='toggleFilter(t.type, $event.source.checked)'>
+        <img [src]="getButtonImage(t.type)" [alt]="t.type">
+      </mat-button-toggle>
+  </mat-button-toggle-group>
   </div>
 </div>
