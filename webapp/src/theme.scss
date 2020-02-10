@@ -15,11 +15,11 @@ $theme-dark: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 
 @include angular-material-theme($theme-dark);
 
-.alternate-theme {
-  $alternate-primary: mat-palette($mat-light-blue);
-  $alternate-accent:  mat-palette($mat-yellow, 400);
-
-  $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
-
-  @include angular-material-theme($alternate-theme);
-}
+//.alternate-theme {
+//  $alternate-primary: mat-palette($mat-light-blue);
+//  $alternate-accent:  mat-palette($mat-yellow, 400);
+//
+//  $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
+//
+//  @include angular-material-theme($alternate-theme);
+//}

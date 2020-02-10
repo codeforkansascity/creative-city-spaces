@@ -20,6 +20,7 @@ import {Navigation2Component} from './navigation2/navigation2.component';
 import {PlaceFilterComponent} from './place-filter/place-filter.component';
 import {PointDetailsComponent} from './point-details/point-details.component';
 import {ProgramFilterComponent} from './program-filter/program-filter.component';
+import { ErrorPagesComponent } from './error-pages/error-pages.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -39,6 +40,7 @@ const routes: Routes = [
     NavigationComponent,
     Navigation2Component,
     AboutComponent,
+    ErrorPagesComponent,
   ],
   imports: [
     [RouterModule.forRoot(routes)],
